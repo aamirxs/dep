@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python App Deployer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Python App Deployer</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>Deploy New Application</h2>
+            <div id="uploadZone" class="upload-zone">
+                <p>Drag and drop your Python application files here or click to select</p>
+                <input type="file" id="fileInput" style="display: none">
+            </div>
+            <p id="uploadStatus"></p>
+        </div>
+
+        <h2>Active Deployments</h2>
+        <div id="deploymentsGrid" class="deployment-grid">
+            <!-- Deployment cards will be inserted here -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

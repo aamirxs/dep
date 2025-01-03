@@ -1,0 +1,14 @@
+[Unit]
+Description=Python App Deployer
+After=network.target
+
+[Service]
+User=ubuntu  # Replace with your server username
+Group=ubuntu  # Replace with your server group
+WorkingDirectory=/path/to/deployer  # Replace with your app directory
+Environment="PATH=/path/to/deployer/venv/bin"
+ExecStart=/path/to/deployer/venv/bin/gunicorn -c gunicorn_config.py app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
